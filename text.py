@@ -12,9 +12,9 @@ The voting form should have a space for your "vote token".
 
 Your vote token is: {token}
 
-Your vote token is unique to you, and unique to this poll.
-Your vote token is anonymous - nobody knows who you are, except this Telegram bot (and we promise not to tell!)
-When the vote results are published, you can use your token to check if your vote was recorded accurately.
+* Your vote token is unique to you, and unique to this poll.
+* Your vote token is anonymous - nobody knows who you are, except this Telegram bot (and we promise not to tell!)
+* When the vote results are published, you can use your token to check if your vote was recorded accurately.
 """
 
 text_existing_token = """Great!
@@ -75,3 +75,18 @@ They will only see your poll if they belong to the target chat."""
 text_deactivated = """Your poll is de-activated.
 
 People will no longer be able to see it with the /vote command."""
+text_new_poll = """Created a new poll with tag:
+`{p}`
+Registered to your user id:
+`{u}`
+Edit it using the commands:
+`/seturl {p} http://www.example.com/`
+`/settitle {p} My Example Poll`
+`/settargetchat {p} -12345678`
+
+You can get the `targetchat` by adding the bot to your target chat, then calling `/getchatid` in that chat.
+
+When you're done, activate it using:
+`/activate {p}`
+"""
+text_private_chat_only = "This command only works in private chat with the bot."

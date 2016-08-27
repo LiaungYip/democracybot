@@ -9,8 +9,10 @@ from telegram.ext import (Updater, CommandHandler)
 
 from edit_poll import cmd_set_title, cmd_set_url, cmd_set_target_chat, \
     cmd_activate, cmd_deactivate
+from help import cmd_help, cmd_start
 from misc_cmd import cmd_get_chat_id
 from new_poll import cmd_new_poll
+from poll_admin import cmd_list_polls
 from vote import cmd_vote, vote_conversation_handler
 
 # Enable logging
@@ -39,13 +41,24 @@ def main():
     dp = updater.dispatcher
 
     # Register command handlers
-    dp.add_handler(CommandHandler("newpoll", cmd_new_poll))
-    dp.add_handler(CommandHandler("getchatid", cmd_get_chat_id))
-    dp.add_handler(CommandHandler("settitle", cmd_set_title))
-    dp.add_handler(CommandHandler("settargetchat", cmd_set_target_chat))
-    dp.add_handler(CommandHandler("seturl", cmd_set_url))
-    dp.add_handler(CommandHandler("activate", cmd_activate))
-    dp.add_handler(CommandHandler("deactivate", cmd_deactivate))
+
+    handlers = (
+        ("newpoll", cmd_new_poll),
+        ("getchatid", cmd_get_chat_id),
+        ("settitle", cmd_set_title),
+        ("settargetchat", cmd_set_target_chat),
+        ("seturl", cmd_set_url),
+        ("activate", cmd_activate),
+        ("deactivate", cmd_deactivate),
+        # ("vote", cmd_vote),
+        ("help", cmd_help),
+        ("listpolls", cmd_list_polls),
+        ("start", cmd_start),
+    )
+
+    for h in handlers:
+        dp.add_handler(CommandHandler(*h))
+
     # dp.add_handler(CommandHandler("vote", cmd_vote))
     dp.add_handler(vote_conversation_handler())
     # log all errors

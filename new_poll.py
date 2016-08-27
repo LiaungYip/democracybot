@@ -1,22 +1,7 @@
 import telegram
 
 from db import new_poll
-
-text_new_poll = """Created a new poll with tag:
-`{p}`
-Registered to your user id:
-`{u}`
-Edit it using the commands:
-`/seturl {p} http://www.example.com/`
-`/settitle {p} My Example Poll`
-`/settargetchat {p} -12345678`
-
-You can get the `targetchat` by adding the bot to your target chat, then calling `/getchatid` in that chat.
-
-When you're done, activate it using:
-`/activate {p}`
-"""
-text_private_chat_only = "This command only works in private chat with the bot."
+from text import text_new_poll, text_private_chat_only
 
 
 def cmd_new_poll(bot: telegram.Bot, update: telegram.Update):

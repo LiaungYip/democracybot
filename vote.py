@@ -11,7 +11,7 @@ from tinydb import Query
 from db import polls_db, tokens_db
 from new_poll import text_private_chat_only
 from text import text_vote_not_understood, text_no_such_vote, text_new_token, \
-    text_existing_token
+    text_existing_token, text_private_chat_only
 from user_in_chat import user_is_in_chat
 
 state_vote_1, state_vote_2 = range(2)
