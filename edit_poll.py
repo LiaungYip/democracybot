@@ -4,52 +4,9 @@ import telegram
 
 from db import get_poll, edit_poll
 from new_poll import text_private_chat_only
-
-text_not_enough_parts = """I don't think you typed that right.
-Try something like:
-`/{c} etaoinsh {e}`
-Where `etaoish` is your "poll tag"."""
-
-text_malformed_tag = """There's no such tag `{t}`.
-Tags should be 8 lowercase letters, like `etaoinsh`.
-Check your spelling of `{t}` and try again.
-Or maybe try `/newpoll` to make a new poll."""
-
-text_no_such_tag_or_not_owner = """Either there's no poll called `{t}`, or you don't own `{t}`.
-Check your spelling of `{t}` and try again.
-Or maybe try `/newpoll` to make a new poll."""
-
-text_edit_successful = """
-Changes applied!
-Your poll looks like this now:
-Owner: {p[owner]}
-Tag: {p[tag]}
-Title: {p[title]}
-Target Chat: {p[target_chat]}
-URL: {p[url]}
-Active: {p[active]}
-"""
-
-text_activate_suggestion = """Your setup looks complete!
-Use `/activate {t}` to activate your poll.
-Once active, people will be able to ask for vote tokens using `/vote`."""
-
-text_not_ready_to_activate = """That poll doesn't look ready yet.
-Have you filled out the title, target chat, and url?
-"""
-
-text_activation_complete = """Your poll is active!
-
-People can ask for vote tokens by:
-
-- Opening a private message with the bot
-- Sending the /vote command, which will give them a list of polls they can vote in.
-
-They will only see your poll if they belong to the target chat."""
-
-text_deactivated = """Your poll is de-activated.
-
-People will no longer be able to see it with the /vote command."""
+from text import text_not_enough_parts, text_malformed_tag, \
+    text_no_such_tag_or_not_owner, text_edit_successful, \
+    text_activate_suggestion, text_activation_complete, text_deactivated
 
 
 # ------------------------------------------------------------------------------

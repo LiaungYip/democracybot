@@ -11,6 +11,7 @@ from edit_poll import cmd_set_title, cmd_set_url, cmd_set_target_chat, \
     cmd_activate, cmd_deactivate
 from misc_cmd import cmd_get_chat_id
 from new_poll import cmd_new_poll
+from vote import cmd_vote, vote_conversation_handler
 
 # Enable logging
 logging.basicConfig(
@@ -45,7 +46,8 @@ def main():
     dp.add_handler(CommandHandler("seturl", cmd_set_url))
     dp.add_handler(CommandHandler("activate", cmd_activate))
     dp.add_handler(CommandHandler("deactivate", cmd_deactivate))
-
+    # dp.add_handler(CommandHandler("vote", cmd_vote))
+    dp.add_handler(vote_conversation_handler())
     # log all errors
     dp.add_error_handler(error)
 
