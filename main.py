@@ -12,7 +12,7 @@ from edit_poll import cmd_set_title, cmd_set_url, cmd_set_target_chat, \
 from help import cmd_help, cmd_start
 from misc_cmd import cmd_get_chat_id
 from new_poll import cmd_new_poll
-from poll_admin import cmd_list_polls
+from poll_admin import cmd_list_polls, cmd_list_tokens
 from vote import cmd_vote, vote_conversation_handler
 
 # Enable logging
@@ -50,9 +50,9 @@ def main():
         ("seturl", cmd_set_url),
         ("activate", cmd_activate),
         ("deactivate", cmd_deactivate),
-        # ("vote", cmd_vote),
         ("help", cmd_help),
         ("listpolls", cmd_list_polls),
+        ("listtokens", cmd_list_tokens),
         ("start", cmd_start),
     )
 

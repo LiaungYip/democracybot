@@ -32,16 +32,24 @@ Your vote token was: {token}
 
 text_not_enough_parts = """I don't think you typed that right.
 Try something like:
+
 `/{c} etaoinsh {e}`
-Where `etaoish` is your "poll tag"."""
+
+Where `etaoish` is your "poll tag".
+
+Forgot your poll tag? Use /listpolls to list all polls that belong to you."""
 
 text_malformed_tag = """There's no such tag `{t}`.
 Tags should be 8 lowercase letters, like `etaoinsh`.
 Check your spelling of `{t}` and try again.
+
+Forgot your poll tag? Use /listpolls to list all polls that belong to you.
 Or maybe try `/newpoll` to make a new poll."""
 
 text_no_such_tag_or_not_owner = """Either there's no poll called `{t}`, or you don't own `{t}`.
 Check your spelling of `{t}` and try again.
+
+Forgot your poll tag? Use /listpolls to list all polls that belong to you.
 Or maybe try `/newpoll` to make a new poll."""
 
 text_edit_successful = """

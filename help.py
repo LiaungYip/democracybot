@@ -36,7 +36,8 @@ Commands available:
     /activate - enable voting on a poll.
     /deactivate - disable voting on a poll
 /getchatid - Prints the Telegram chat_id for the current chat, for use with /settargetchat .
-/listpolls - Lists all polls that belong to you."""
+/listpolls - Lists all polls that belong to you.
+/listtokens - Lists the tokens that have been issued for your poll."""
 
 
 # For BotFather /setcommands
@@ -51,6 +52,7 @@ activate - enable voting on a poll.
 deactivate - disable voting on a poll
 getchatid - Prints the Telegram chat_id for the current chat, for use with /settargetchat .
 listpolls - Lists all polls that belong to you.
+listtokens - Lists the tokens that have been issued for your poll.
 """
 
 import telegram
