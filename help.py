@@ -39,7 +39,6 @@ Commands available:
 /listpolls - Lists all polls that belong to you.
 /listtokens - Lists the tokens that have been issued for your poll."""
 
-
 # For BotFather /setcommands
 """
 help - Get help.
@@ -56,6 +55,8 @@ listtokens - Lists the tokens that have been issued for your poll.
 """
 
 import telegram
+
+
 def cmd_help(bot: telegram.Bot, update: telegram.Update):
     cid = update.message.chat_id
     if update.message.chat.type != "private":
@@ -63,6 +64,7 @@ def cmd_help(bot: telegram.Bot, update: telegram.Update):
         return
 
     bot.sendMessage(cid, text=text_help)
+
 
 def cmd_start(bot: telegram.Bot, update: telegram.Update):
     cid = update.message.chat_id

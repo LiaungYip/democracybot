@@ -9,7 +9,6 @@ from telegram.ext import ConversationHandler, CommandHandler, MessageHandler, \
 from tinydb import Query
 
 from db import polls_db, tokens_db
-from new_poll import text_private_chat_only
 from text import text_vote_not_understood, text_no_such_vote, text_new_token, \
     text_existing_token, text_private_chat_only
 from user_in_chat import user_is_in_chat
@@ -64,7 +63,7 @@ def process_vote_response(bot: telegram.Bot, update: telegram.Update):
     poll = polls_db.get(q.tag == poll_tag)
 
     if (poll is None) or (poll['active'] != True) or (
-    not user_is_in_chat(uid, poll['target_chat'], bot)):
+            not user_is_in_chat(uid, poll['target_chat'], bot)):
         bot.sendMessage(update.message.chat_id, text_no_such_vote,
                         reply_markup=ReplyKeyboardHide())
         return ConversationHandler.END
@@ -91,7 +90,8 @@ def process_vote_response(bot: telegram.Bot, update: telegram.Update):
                         reply_markup=ReplyKeyboardHide())
         return ConversationHandler.END
 
-    assert False # Should never reach here
+    assert False  # Should never reach here
+
 
 def vote_conversation_handler():
     conv_handler = ConversationHandler(

@@ -3,7 +3,6 @@ import re
 import telegram
 
 from db import get_poll, edit_poll
-from new_poll import text_private_chat_only
 from text import text_not_enough_parts, text_malformed_tag, \
     text_no_such_tag_or_not_owner, text_edit_successful, \
     text_activate_suggestion, text_activation_complete, text_deactivated, \

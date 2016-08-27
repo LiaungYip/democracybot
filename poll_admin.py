@@ -2,11 +2,9 @@ import telegram
 from tinydb import Query
 
 from db import polls_db
-from text import text_private_chat_only
-
-from edit_poll import generic_checks
-
 from db import tokens_db
+from edit_poll import generic_checks
+from text import text_private_chat_only
 
 template = """Owner: {p[owner]}
 Tag: {p[tag]}
@@ -43,7 +41,9 @@ def cmd_list_tokens(bot: telegram.Bot, update: telegram.Update):
         q = Query()
         tokens = tokens_db.search(q.poll_tag == tag)
 
-        msg = "There have been %i tokens generated for your poll:\n" % len(tokens)
-        msg = msg + "\n".join([ "%i: %s"% (n+1, t['token']) for n, t in enumerate(tokens)])
+        msg = "There have been %i tokens generated for your poll:\n" % len(
+            tokens)
+        msg = msg + "\n".join(
+            ["%i: %s" % (n + 1, t['token']) for n, t in enumerate(tokens)])
 
         bot.sendMessage(cid, msg)
